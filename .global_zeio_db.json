@@ -1,0 +1,192 @@
+{
+  "users": [
+    {
+      "id": "ZE-OWNER",
+      "username": "ZE.io",
+      "name": "zvn3",
+      "pass": "112007",
+      "password": "112007",
+      "passwordHash": "MTEyMDA3",
+      "role": "owner",
+      "isOwner": true,
+      "isVerified": true,
+      "photo": "https://api.dicebear.com/9.x/initials/svg?seed=yuy",
+      "avatar": "https://api.dicebear.com/9.x/initials/svg?seed=yuy",
+      "bio": "Official Owner & Creator of ZE.io 🚀",
+      "followers": 9999,
+      "createdAt": 1793736669769,
+      "joinedDate": "October 2026",
+      "isAdmin": true,
+      "isVip": true,
+      "vip": true,
+      "vipLevel": "exclusive",
+      "isVipExclusive": true,
+      "adminPermissions": [],
+      "verified": true
+    },
+    {
+      "id": "ZE-TESTA1",
+      "username": "alice_test",
+      "name": "Alice Wonder",
+      "password": "password123",
+      "role": "user"
+    },
+    {
+      "id": "ZE-TESTB2",
+      "username": "bob_test",
+      "name": "Bob Builder",
+      "password": "password456",
+      "role": "user"
+    },
+    {
+      "id": "ZE-PTXI7J",
+      "username": "cok",
+      "name": "yuy",
+      "pass": "000000",
+      "password": "000000",
+      "passwordHash": "MDAwMDAw",
+      "role": "user",
+      "isOwner": false,
+      "isVerified": false,
+      "photo": "https://api.dicebear.com/9.x/initials/svg?seed=yuy",
+      "avatar": "https://api.dicebear.com/9.x/initials/svg?seed=yuy",
+      "bio": "Hey there! I am using ZE.io.",
+      "followers": 0,
+      "createdAt": 1793736595691,
+      "joinedDate": "October 2026",
+      "isAdmin": false,
+      "adminPermissions": [],
+      "vip": false,
+      "isVip": false,
+      "isVipExclusive": false,
+      "vipExpiresAt": 0,
+      "isSuspended": false
+    }
+  ],
+  "friendRequests": {
+    "ZE-OWNER": []
+  },
+  "friendships": {
+    "ZE-OWNER": [
+      "ZE-RF1NJP"
+    ],
+    "ZE-RF1NJP": [
+      "ZE-OWNER"
+    ]
+  },
+  "stories": [],
+  "chats": [
+    {
+      "id": "ZE-OWNER_ZE-RF1NJP",
+      "chatId": "ZE-OWNER_ZE-RF1NJP",
+      "type": "direct",
+      "participants": [
+        "ZE-OWNER",
+        "ZE-RF1NJP"
+      ],
+      "participantsInfo": {
+        "ZE-OWNER": {
+          "name": "zvn3",
+          "photo": "https://api.dicebear.com/9.x/initials/svg?seed=akun"
+        },
+        "ZE-RF1NJP": {
+          "name": "yy7",
+          "photo": "https://api.dicebear.com/9.x/initials/svg?seed=yy7"
+        }
+      },
+      "lastMessage": "Mulai percakapan",
+      "lastTime": 1793786586768,
+      "updatedAt": 1793786586768,
+      "lastSenderId": "ZE-OWNER"
+    },
+    {
+      "chatId": "ZE-TESTA1_ZE-TESTB2",
+      "id": "ZE-TESTA1_ZE-TESTB2",
+      "participants": [
+        "ZE-TESTA1",
+        "ZE-TESTB2"
+      ],
+      "lastMessage": "Halo Alice, pesan kamu masuk di HP 2 realtime!",
+      "updatedAt": 1793165641322,
+      "lastTime": 1793165641322
+    }
+  ],
+  "messages": {
+    "ZE-TESTA1_ZE-TESTB2": [
+      {
+        "chatId": "ZE-TESTA1_ZE-TESTB2",
+        "senderId": "ZE-TESTA1",
+        "senderName": "Alice Wonder",
+        "text": "Halo Bob dari HP 1!",
+        "type": "text",
+        "id": "msg_1793165641319_t67g8",
+        "createdAt": 1793165641319
+      },
+      {
+        "chatId": "ZE-TESTA1_ZE-TESTB2",
+        "senderId": "ZE-TESTB2",
+        "senderName": "Bob Builder",
+        "text": "Halo Alice, pesan kamu masuk di HP 2 realtime!",
+        "type": "text",
+        "id": "msg_1793165641322_fh4el",
+        "createdAt": 1793165641322
+      }
+    ],
+    "ZE-TESTB2_ZE-TESTA1": [
+      {
+        "chatId": "ZE-TESTA1_ZE-TESTB2",
+        "senderId": "ZE-TESTA1",
+        "senderName": "Alice Wonder",
+        "text": "Halo Bob dari HP 1!",
+        "type": "text",
+        "id": "msg_1793165641319_t67g8",
+        "createdAt": 1793165641319
+      },
+      {
+        "chatId": "ZE-TESTA1_ZE-TESTB2",
+        "senderId": "ZE-TESTB2",
+        "senderName": "Bob Builder",
+        "text": "Halo Alice, pesan kamu masuk di HP 2 realtime!",
+        "type": "text",
+        "id": "msg_1793165641322_fh4el",
+        "createdAt": 1793165641322
+      }
+    ],
+    "ZE-OWNER_ZE-RF1NJP": [
+      {
+        "id": "msg_1793735486392_v1na3",
+        "chatId": "ZE-OWNER_ZE-RF1NJP",
+        "senderId": "ZE-OWNER",
+        "senderName": "zvn3",
+        "senderPhoto": "https://api.dicebear.com/9.x/initials/svg?seed=yy7",
+        "text": "p",
+        "type": "text",
+        "createdAt": 1793735486392
+      }
+    ]
+  },
+  "notes": {},
+  "musicHistory": {
+    "ZE-OWNER": [
+      {
+        "id": "tt_1793645186044",
+        "title": "“别用那种怜悯的眼神看着我。一个一心复仇的人不需要同情。” \"Đừng nhìn tôi bằng đôi mắt thương hại đó. Kẻ mang danh phục hận không cần sự đồng cảm.\" #narutoshippuden #sasuke #sasukeuchiha #douyin ",
+        "author": "羅希姆",
+        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/o4qR1FEQQBgqLepfu9FcOVVTS2umWEADDB3RCz~tplv-tiktokx-cropcenter-q:300:400:q70.jpeg?dr=8596&refresh_token=e4e5044f&x-expires=1793728800&x-signature=720qzJyDzQ2Uj%2FecoMnffN41tVY%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=1d1a97fc&idc=useast5&biz_tag=tt_video&s=AWEME_DETAIL&sc=cover",
+        "videoUrl": "https://v16m.tiktokcdn-us.com/1085a29c8616d493e6af7f49771ce03b/6ae92ef1/video/tos/alisg/tos-alisg-pve-0037c001/oISRzpEVmEDdeOc2EuuL9ZgQDfAzFBg1TB1q3I/?a=1233&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&&bt=1342&ft=74~WHDDwNkkVQQdGuIOnsd0yNBZqYl6GIG2jhWLrK&mime_type=video_mp4&rc=OjMzZmQ5ZmdpaGVkPGk8NUBpanRmd3M5cjVxZDMzODczNEA2XzJgMjFfXzUxNGE0Nl9gYSNoZ25kMmRza2dhLS1kMWBzcw%3D%3D&vvpl=1&l=2026110218462774FD3108462F45268AA3&btag=e000b8000",
+        "audioUrl": "https://v16-ies-music.tiktokcdn-us.com/ad10f65e5b8f6447b0fda9543bd2c1c2/6af21543/video/tos/alisg/tos-alisg-v-27dcd7/ogQBKCBViC2IM2igpGKCqVbfQd8JBeUXVIBLJR/?a=583965&bti=OTg7QGo5QHM6OjZALTAzYCMvcCMxNDNg&&bt=125&ft=7g~atDDwNkkVQQdGuIOnsd0yNBZqYl6GIG2jhWLrK&mime_type=audio_mpeg&rc=NjhkNzQ3PDNlMzM2M2Q1OEBpM2Q8NXY5cnl1ODMzODU8NEAzLjQ0YzU2XjMxMS9gL2JhYSMyL2E1MmRjYmJhLS1kMS1zcw%3D%3D&vvpl=1&l=2026110218462774FD3108462F45268AA3&btag=e00088000&shp=d05b14bd&shcp=-",
+        "url": "https://v16m.tiktokcdn-us.com/1085a29c8616d493e6af7f49771ce03b/6ae92ef1/video/tos/alisg/tos-alisg-pve-0037c001/oISRzpEVmEDdeOc2EuuL9ZgQDfAzFBg1TB1q3I/?a=1233&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&&bt=1342&ft=74~WHDDwNkkVQQdGuIOnsd0yNBZqYl6GIG2jhWLrK&mime_type=video_mp4&rc=OjMzZmQ5ZmdpaGVkPGk8NUBpanRmd3M5cjVxZDMzODczNEA2XzJgMjFfXzUxNGE0Nl9gYSNoZ25kMmRza2dhLS1kMWBzcw%3D%3D&vvpl=1&l=2026110218462774FD3108462F45268AA3&btag=e000b8000",
+        "source": "tiktok",
+        "sourceType": "tiktok",
+        "sourceUrl": "https://vt.tiktok.com/ZSp1cTbcJ/",
+        "createdAt": 1793645186051
+      }
+    ]
+  },
+  "profileLikes": {},
+  "profileFollows": {},
+  "chatReadStatus": {
+    "ZE-OWNER_ZE-RF1NJP_ZE-OWNER": 1793786587024
+  },
+  "posts": []
+}

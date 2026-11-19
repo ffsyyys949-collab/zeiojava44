@@ -1,0 +1,76 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function hasNonEmptyUid(field) {
+      return field is string && field.size() > 0;
+    }
+
+    // Per-UID user profile & avatar records
+    match /ze_users/{userId} {
+      allow read: if true;
+      allow create, update: if hasNonEmptyUid(userId) &&
+        (!('id' in request.resource.data) || request.resource.data.id == userId);
+      allow delete: if false;
+    }
+
+    match /users/{userId} {
+      allow read: if true;
+      allow create, update: if hasNonEmptyUid(userId) &&
+        (!('id' in request.resource.data) || request.resource.data.id == userId);
+      allow delete: if false;
+    }
+
+    // Per-UID uploaded video/photo posts (strict owner UID required, immutable owner on update)
+    match /ze_posts/{postId} {
+      allow read: if true;
+      allow create: if hasNonEmptyUid(request.resource.data.uid) &&
+        hasNonEmptyUid(request.resource.data.userId) &&
+        request.resource.data.uid == request.resource.data.userId;
+      allow update: if resource.data.uid == request.resource.data.uid &&
+        resource.data.userId == request.resource.data.userId;
+      allow delete: if resource.data.uid is string;
+    }
+
+    // One-Account-One-KEY binding rules (once boundUid is set, another account cannot overwrite it)
+    match /ze_keys/{keyId} {
+      allow read: if true;
+      allow create: if hasNonEmptyUid(request.resource.data.key);
+      allow update: if !('boundUid' in resource.data) ||
+        resource.data.boundUid == '' ||
+        resource.data.boundUid == null ||
+        request.resource.data.boundUid == resource.data.boundUid;
+      allow delete: if false;
+    }
+
+    // Real-time chat, friendships, groups, and status notes
+    match /chats/{chatId} {
+      allow read, write: if true;
+      match /{subpath=**} {
+        allow read, write: if true;
+      }
+    }
+
+    match /messages/{msgId} {
+      allow read, write: if true;
+    }
+
+    match /friendships/{friendshipId} {
+      allow read, write: if true;
+    }
+
+    match /friend_requests/{reqId} {
+      allow read, write: if true;
+    }
+
+    match /groups/{groupId} {
+      allow read, write: if true;
+      match /{subpath=**} {
+        allow read, write: if true;
+      }
+    }
+
+    match /notes/{noteId} {
+      allow read, write: if true;
+    }
+  }
+}

@@ -1,0 +1,971 @@
+@import "tailwindcss";
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    writing-mode: horizontal-tb !important;
+  }
+
+  body {
+    background-color: #080808;
+    background: transparent;
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
+    line-height: 1.45;
+    word-break: normal;
+  }
+
+  p, span, div, h1, h2, h3, h4, h5, h6, a, button, label {
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  img, video {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* ========================================================================== */
+/* BLACK LIQUID GLASS CONSTITUTION                                            */
+/* ========================================================================== */
+
+/* Root & body transparency so video shines through naturally */
+html, body, #root {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+/* Any page wrapper that used solid background — keep transparent so homepage black water video shines through */
+.bg-\[\#050505\],
+.bg-\[\#080808\],
+.bg-\[\#000000\],
+.bg-\[\#0a0a0a\],
+.bg-black.min-h-screen,
+[class*="min-h-screen"],
+[class*="h-screen"],
+[class*="h-[100dvh]"],
+[class*="h-[100vh]"],
+.ze-transparent-page,
+div.ze-transparent-page {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+.ze-transparent-page {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* BLACK LIQUID GLASS - ALL CARDS, PANELS & CONTAINERS (OPTIMIZED 60 FPS PIPELINE) */
+.glass-panel,
+.glass-card,
+[class*="bg-[#141414]"],
+[class*="bg-[#161616]"],
+[class*="bg-[#181818]"],
+[class*="bg-[#1E1E1E]"],
+[class*="bg-[#1e1e1e]"],
+[class*="bg-[#1A1A1A]"],
+[class*="bg-[#1a1a1a]"],
+[class*="bg-[#242424]"],
+[class*="bg-[#202020]"],
+[class*="bg-[#222222]"],
+[class*="bg-[#1c1c1e]"],
+[class*="bg-[#121212]"],
+[class*="bg-[#101010]"],
+[class*="bg-[#111111]"],
+[class*="bg-[#131313]"],
+[class*="bg-[#151515]"],
+[class*="bg-zinc-900"],
+[class*="bg-zinc-950"],
+[class*="bg-neutral-900"] {
+  background: rgba(12, 12, 12, 0.40) !important;
+  -webkit-backdrop-filter: blur(8px) saturate(120%) !important;
+  backdrop-filter: blur(8px) saturate(120%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 4px 16px rgba(0, 0, 0, 0.14) !important;
+  background-clip: padding-box !important;
+  backface-visibility: hidden;
+}
+
+/* GPU Performance Optimization: Cancel redundant nested backdrop blur passes across ALL glass surfaces */
+[class*="bg-[#141414]"] [class*="bg-[#141414]"],
+[class*="bg-[#141414]"] [class*="bg-[#181818]"],
+[class*="bg-[#141414]"] [class*="bg-[#1E1E1E]"],
+[class*="bg-[#141414]"] [class*="bg-[#1e1e1e]"],
+[class*="bg-[#141414]"] [class*="bg-[#202020]"],
+[class*="bg-[#181818]"] [class*="bg-[#141414]"],
+[class*="bg-[#181818]"] [class*="bg-[#181818]"],
+[class*="bg-[#181818]"] [class*="bg-[#1E1E1E]"],
+[class*="bg-[#1E1E1E]"] [class*="bg-[#141414]"],
+[class*="bg-[#1E1E1E]"] [class*="bg-[#181818]"],
+[class*="bg-[#1E1E1E]"] [class*="bg-[#1E1E1E]"],
+[class*="bg-[#1E1E1E]"] [class*="bg-[#1e1e1e]"],
+[class*="bg-[#1E1E1E]"] [class*="bg-[#202020]"],
+[class*="bg-[#1E1E1E]"] .glass-input,
+[class*="bg-[#141414]"] .glass-input,
+.glass-panel .glass-input,
+.glass-card .glass-input,
+.glass-panel .glass-card,
+.glass-card .glass-panel,
+.glass-panel .glass-panel {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  background: rgba(255, 255, 255, 0.045) !important;
+  box-shadow: none !important;
+}
+
+/* Touch and scroll performance containment - Zero-delay tap & 120Hz Butter Smooth */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a,
+input,
+textarea,
+select,
+[role="button"],
+.cursor-pointer {
+  touch-action: manipulation;
+}
+
+.overflow-y-auto,
+.overflow-x-auto,
+[class*="overflow-y-auto"],
+[class*="overflow-x-auto"] {
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior: contain !important;
+  contain: layout style;
+}
+
+/* Mobile spec optimization: skip expensive per-card backdrop blur over video so low-spec devices run smoothly */
+@media (max-width: 640px) {
+  .glass-panel,
+  .glass-card,
+  [class*="bg-[#141414]"],
+  [class*="bg-[#161616]"],
+  [class*="bg-[#181818]"],
+  [class*="bg-[#1E1E1E]"],
+  [class*="bg-[#1e1e1e]"],
+  [class*="bg-[#1A1A1A]"],
+  [class*="bg-[#1a1a1a]"],
+  [class*="bg-[#242424]"],
+  [class*="bg-[#202020]"],
+  [class*="bg-[#222222]"] {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    background: rgba(12, 13, 18, 0.74) !important;
+  }
+
+  .ze-feature-card {
+    contain: layout style paint;
+  }
+}
+
+/* NAVBAR KACA (Respects theme customization when .ze-themed-nav is active) */
+.glass-navbar:not(.ze-themed-nav),
+.bottom-nav:not(.ze-themed-nav) > div,
+nav.bottom-nav:not(.ze-themed-nav) {
+  background: rgba(8, 8, 8, 0.45) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(120%) !important;
+  backdrop-filter: blur(10px) saturate(120%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.13) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    -4px 6px 16px rgba(0, 0, 0, 0.35) !important;
+  background-clip: padding-box !important;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* INPUT KACA & FORM ELEMENT COLORS */
+.glass-input,
+.ze-glass-input {
+  background: rgba(0, 0, 0, 0.34);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  background-clip: padding-box;
+}
+
+.glass-input::placeholder,
+.ze-glass-input::placeholder {
+  color: rgba(255, 255, 255, 0.42);
+}
+
+/* DEDICATED FULL-PAGE FEATURE MENUS:
+   ONLY the outer background container (.ze-solid-menu-page) is transparent so the
+   exact homepage custom video (<VideoBackground />) moves visibly behind it.
+   ALL UI components (headers, sidebars, cards, subcards, inputs, modals, buttons)
+   inside .ze-solid-menu-page are 100% SOLID (opaque, non-transparent). */
+.ze-solid-menu-page,
+div.ze-solid-menu-page {
+  background: transparent !important;
+  background-color: transparent !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  color: #ffffff;
+}
+
+.ze-solid-menu-page *,
+.ze-solid-menu-page *::before,
+.ze-solid-menu-page *::after {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+.ze-solid-menu-page [class*="bg-zinc-900"] {
+  background: #18181b !important;
+  background-color: #18181b !important;
+}
+
+.ze-solid-menu-page [class*="bg-zinc-950"] {
+  background: #09090b !important;
+  background-color: #09090b !important;
+}
+
+.ze-solid-header {
+  background: #111318 !important;
+  background-color: #111318 !important;
+  border-bottom: 1px solid #262a36 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+  color: #ffffff;
+}
+
+.ze-solid-sidebar {
+  background: #111318 !important;
+  background-color: #111318 !important;
+  border-color: #262a36 !important;
+  color: #ffffff;
+}
+
+.ze-solid-card {
+  background: #151821 !important;
+  background-color: #151821 !important;
+  border: 1px solid #282d3c !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5) !important;
+  color: #ffffff;
+}
+
+.ze-solid-subcard {
+  background: #1d212d !important;
+  background-color: #1d212d !important;
+  border: 1px solid #2f3546 !important;
+  color: #ffffff;
+}
+
+.ze-solid-input {
+  background: #0d0f14 !important;
+  background-color: #0d0f14 !important;
+  border: 1px solid #343b4f !important;
+  color: #ffffff !important;
+}
+
+.ze-solid-input::placeholder {
+  color: #8b93a7 !important;
+}
+
+.ze-solid-input:focus {
+  border-color: #60a5fa !important;
+  outline: none !important;
+}
+
+/* Ensure native select options are always legible on all platforms */
+select,
+.ze-solid-input select {
+  color-scheme: dark;
+}
+
+select option {
+  background-color: #121217 !important;
+  color: #ffffff !important;
+}
+
+/* Avoid expensive backdrop-filter passes on every input nested inside glass headers/modals */
+header input,
+.sticky.top-0 input,
+form input,
+form textarea {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* HEADERS & STICKY APP BARS (Exclude .ze-solid-menu-page so solid headers stay 100% opaque) */
+header:not(.ze-solid-header),
+.sticky.top-0:not(.ze-solid-header),
+div[class*="sticky top-0"]:not(.ze-solid-header) {
+  background: rgba(8, 8, 10, 0.46) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(120%) !important;
+  backdrop-filter: blur(12px) saturate(120%) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow:
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04),
+    0 2px 10px rgba(0, 0, 0, 0.16) !important;
+  background-clip: padding-box !important;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* MODALS, DIALOGS, DROPDOWNS & POPUPS (Exclude .ze-solid-menu-page, .ze-transparent-page, and solid modals) */
+div[class*="fixed inset-0"][class*="backdrop-blur"]:not(.ze-solid-menu-page):not(.ze-transparent-page):not(.ze-solid-modal-backdrop),
+div[class*="fixed inset-0"][class*="bg-black"]:not(.ze-solid-menu-page):not(.ze-transparent-page):not(.ze-solid-modal-backdrop) {
+  background: rgba(0, 0, 0, 0.55) !important;
+}
+
+div[class*="fixed inset-0"]:not(.ze-solid-menu-page):not(.ze-transparent-page):not(.ze-solid-modal-backdrop) > div[class*="rounded"] {
+  background: rgba(12, 12, 12, 0.58) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(120%) !important;
+  backdrop-filter: blur(12px) saturate(120%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 8px 28px rgba(0, 0, 0, 0.35) !important;
+  background-clip: padding-box !important;
+  transform: translateZ(0);
+}
+
+.ze-solid-modal-backdrop {
+  background: rgba(0, 0, 0, 0.72) !important;
+}
+
+/* CHAT BUBBLES - Lightweight compositing so long message lists scroll at 120 FPS without blur thrashing */
+.chat-bubble-received,
+div[class*="rounded-bl-none"] {
+  background: rgba(16, 16, 16, 0.62) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+}
+
+/* Ensure glass elements without explicit dark text retain crisp white glow without overriding intentional dark text */
+.glass-panel:not(.feature-content-dark):not(.auth-content-dark) > *:not([class*="text-black"]):not([class*="text-zinc-900"]):not([class*="text-zinc-800"]),
+.glass-navbar > *:not([class*="text-black"]) {
+  color: inherit;
+}
+
+/* Custom scrollbar matching pure glass white glow */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Border Glow Animation - Pure GPU Opacity Accelerated (No border-color paint invalidation) */
+@keyframes borderGlow {
+  0%, 100% {
+    opacity: 0.90;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.border-glow {
+  animation: borderGlow 4s ease-in-out infinite;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Video Shine Reflection */
+@keyframes shineSlide {
+  0% {
+    transform: translate3d(-150%, 0, 0) skewX(-20deg);
+  }
+  100% {
+    transform: translate3d(250%, 0, 0) skewX(-20deg);
+  }
+}
+
+.video-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.video-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  pointer-events: none;
+  will-change: transform;
+  animation: shineSlide 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* ========================================================================== */
+/* REALTIME FEED BANNER - LYRICS OVERLAY (28px Bold White with Black Stroke)  */
+/* ========================================================================== */
+@keyframes lyricsFadeInUpBlink {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0) scale(0.96);
+  }
+  20% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  60% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.55;
+  }
+  88% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.lyrics-overlay-text {
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.01em !important;
+  -webkit-text-stroke: 1.8px #000000 !important;
+  text-stroke: 1.8px #000000 !important;
+  text-shadow:
+    0 0 6px #000000,
+    0 2px 4px #000000,
+    2px 2px 0 #000000,
+    -2px -2px 0 #000000,
+    2px -2px 0 #000000,
+    -2px 2px 0 #000000,
+    0 -2px 0 #000000,
+    0 2px 0 #000000,
+    -2px 0 0 #000000,
+    2px 0 0 #000000 !important;
+  animation: lyricsFadeInUpBlink 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Futuristic Slanted Typography matching Photo 3 */
+.font-slant {
+  font-family: 'Orbitron', 'Chakra Petch', -apple-system, sans-serif !important;
+  font-style: italic;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* 3D shadow toward bottom-left for bug console UI */
+.shadow-3d-bl {
+  box-shadow: -4px 6px 14px rgba(0, 0, 0, 0.85), -1px 2px 0px rgba(255, 255, 255, 0.15) !important;
+}
+
+.shadow-3d-bl-active {
+  box-shadow: -4px 6px 16px rgba(0, 0, 0, 0.9), 0 0 14px rgba(255, 255, 255, 0.5), -1px 2px 0px rgba(255, 255, 255, 0.35) !important;
+}
+
+/* ========================================================================== */
+/* ZE.IO APPLICATION FPS LOCK & GPU COMPOSITOR PIPELINE (60 / 90 / 120 FPS)   */
+/* ========================================================================== */
+:root {
+  --ze-fps-target: 60;
+  --ze-frame-budget-ms: 16.67ms;
+  --ze-ui-duration: 175ms;
+}
+
+/* Synchronize UI micro-interactions to active FPS frame cadence; restrict to GPU-only properties */
+html[data-fps-lock="on"] button,
+html[data-fps-lock="on"] [class*="transition"] {
+  transition-duration: var(--ze-ui-duration, 175ms);
+  transition-property: transform, opacity, background-color, border-color, color;
+}
+
+/* 90 FPS Lock GPU Compositor Budget (< 11.11ms per frame) - No per-card will-change VRAM bloat */
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="90"] .glass-panel,
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="90"] .glass-card,
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="90"] [class*="bg-[#141414]"],
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="90"] [class*="bg-[#161616]"],
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="90"] [class*="bg-[#181818]"],
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="90"] [class*="bg-[#1E1E1E]"],
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="90"] [class*="bg-[#1e1e1e]"],
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="90"] [class*="bg-[#202020]"],
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="90"] [class*="bg-zinc-900"] {
+  background: rgba(12, 12, 12, 0.50) !important;
+  -webkit-backdrop-filter: blur(5px) saturate(110%) !important;
+  backdrop-filter: blur(5px) saturate(110%) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 2px 10px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* 120 FPS Lock Ultra-Low-Latency GPU Compositor Budget (< 8.33ms per frame over live background video) */
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="120"] .glass-panel,
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="120"] .glass-card,
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="120"] [class*="bg-[#141414]"],
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="120"] [class*="bg-[#161616]"],
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="120"] [class*="bg-[#181818]"],
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="120"] [class*="bg-[#1E1E1E]"],
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="120"] [class*="bg-[#1e1e1e]"],
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="120"] [class*="bg-[#1A1A1A]"],
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="120"] [class*="bg-[#1a1a1a]"],
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="120"] [class*="bg-[#202020]"],
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="120"] [class*="bg-[#222222]"],
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="120"] [class*="bg-[#242424]"],
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="120"] [class*="bg-zinc-900"],
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="120"] [class*="bg-zinc-950"],
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="120"] [class*="bg-neutral-900"] {
+  background: rgba(13, 13, 15, 0.58) !important;
+  -webkit-backdrop-filter: blur(3px) !important;
+  backdrop-filter: blur(3px) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07) !important;
+}
+
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="120"] .glass-input {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  background: rgba(0, 0, 0, 0.34) !important;
+}
+
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="120"] header:not(.ze-solid-header),
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="120"] .sticky.top-0:not(.ze-solid-header),
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="120"] div[class*="sticky top-0"]:not(.ze-solid-header),
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="120"] .glass-navbar,
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="120"] .bottom-nav > div {
+  -webkit-backdrop-filter: blur(8px) !important;
+  backdrop-filter: blur(8px) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 4px 16px rgba(0, 0, 0, 0.22) !important;
+}
+
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="120"] .video-shine::after,
+html[data-fps-lock="on"][data-gpu-boost="on"][data-fps-target="120"] .border-glow {
+  animation-play-state: paused !important;
+}
+
+/* Passive Touch & Wheel Scroll Anti-Jank Guard: Suspend heavy shadows & multi-pass blur recomposite mid-scroll */
+html[data-scrolling="true"] .glass-panel,
+html[data-scrolling="true"] .glass-card,
+html[data-scrolling="true"] [class*="bg-[#141414]"],
+html[data-scrolling="true"] [class*="bg-[#181818]"],
+html[data-scrolling="true"] [class*="bg-[#1E1E1E]"],
+html[data-scrolling="true"] [class*="bg-[#1e1e1e]"],
+html[data-scrolling="true"] [class*="bg-zinc-900"] {
+  box-shadow: none !important;
+  transition: none !important;
+}
+
+html[data-scrolling="true"][data-fps-target="120"] .glass-panel,
+html[data-scrolling="true"][data-fps-target="120"] .glass-card,
+html[data-scrolling="true"][data-fps-target="120"] [class*="bg-[#141414]"],
+html[data-scrolling="true"][data-fps-target="120"] [class*="bg-[#181818]"],
+html[data-scrolling="true"][data-fps-target="120"] [class*="bg-[#1E1E1E]"],
+html[data-scrolling="true"][data-fps-target="120"] [class*="bg-[#1e1e1e]"] {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  background: rgba(14, 14, 16, 0.72) !important;
+}
+
+/* Zeya (A!) lively micro-motion animations */
+@keyframes zeCharPop {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes zeCharBreathe {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-2.5px) scale(1.012);
+  }
+}
+
+@keyframes zeCharSway {
+  0%, 100% {
+    transform: rotate(-1deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(1.2deg) translateY(-2px);
+  }
+}
+
+@keyframes zeCharHug {
+  0%, 100% {
+    transform: scale(1.03) translateY(0px);
+  }
+  50% {
+    transform: scale(1.07) translateY(-3px);
+  }
+}
+
+.ze-char-pop {
+  animation: zeCharPop 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.ze-char-breathe {
+  animation: zeCharBreathe 3.4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.ze-char-sway {
+  animation: zeCharSway 2.9s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.ze-char-hug {
+  animation: zeCharHug 2.2s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+/* ========================================================================== */
+/* HOME & APP-WIDE LOGO ANIMATIONS (16 STYLES + 4 SPEEDS + ON/OFF + ZERO LAG) */
+/* ========================================================================== */
+:root {
+  --ze-logo-dur: 3.4s;
+  --ze-theme-accent: #3b82f6;
+}
+
+/* KECEPATAN: Pelan / Sedang / Cepet / Heboh */
+[data-logo-anim-speed="pelan"],
+[data-logo-anim="pelan"] {
+  --ze-logo-dur: 3.4s;
+}
+
+[data-logo-anim-speed="sedang"],
+[data-logo-anim="sedang"] {
+  --ze-logo-dur: 2.1s;
+}
+
+[data-logo-anim-speed="cepet"],
+[data-logo-anim="cepet"] {
+  --ze-logo-dur: 1.25s;
+}
+
+[data-logo-anim-speed="heboh"],
+[data-logo-anim="heboh"] {
+  --ze-logo-dur: 0.68s;
+}
+
+/* MATI / OFF TOTAL: Semua logo diam total tanpa gerak sedikitpun */
+[data-logo-anim-enabled="false"] .ze-logo-anim,
+[data-logo-anim-enabled="false"] .ze-video-thumb-zoom,
+[data-logo-anim-style="mati"] .ze-logo-anim,
+[data-logo-anim-style="mati"] .ze-video-thumb-zoom,
+[data-logo-anim="mati"] .ze-logo-anim,
+[data-logo-anim="mati"] .ze-video-thumb-zoom {
+  animation: none !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+/* Keyframes (Pure GPU Transform / Opacity / Filter only) */
+@keyframes zeAnimWiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-9deg) translateY(-1px); }
+  75% { transform: rotate(9deg) translateY(-1px); }
+}
+
+@keyframes zeAnimWiggleHeboh {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  20% { transform: rotate(-16deg) scale(1.1); }
+  40% { transform: rotate(16deg) scale(1.06); }
+  60% { transform: rotate(-14deg) scale(1.12); }
+  80% { transform: rotate(14deg) scale(1.06); }
+}
+
+@keyframes zeAnimFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes zeAnimBounce {
+  0%, 100% { transform: translateY(0px) scale(1, 1); }
+  35% { transform: translateY(-6px) scale(0.95, 1.08); }
+  65% { transform: translateY(1px) scale(1.08, 0.92); }
+}
+
+@keyframes zeAnimSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes zeAnimBlink {
+  0%, 42%, 100% { opacity: 1; transform: scale(1); }
+  55%, 70% { opacity: 0.25; transform: scale(0.94); }
+  85% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes zeAnimPulse {
+  0%, 100% { transform: scale(0.92); }
+  50% { transform: scale(1.14); }
+}
+
+@keyframes zeAnimSlide {
+  0%, 100% { transform: translateX(0px); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+@keyframes zeAnimDance {
+  0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  25% { transform: translate(-3px, -3px) rotate(-12deg) scale(1.08); }
+  50% { transform: translate(0, 1px) rotate(0deg) scale(0.95); }
+  75% { transform: translate(3px, -3px) rotate(12deg) scale(1.08); }
+}
+
+@keyframes zeAnimGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.15));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 9px var(--ze-theme-accent, #3b82f6));
+    transform: scale(1.08);
+  }
+}
+
+@keyframes zeAnimShake {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-2px, 1px) rotate(-3deg); }
+  40% { transform: translate(2px, -1px) rotate(3deg); }
+  60% { transform: translate(-2px, -1px) rotate(-2deg); }
+  80% { transform: translate(2px, 1px) rotate(2deg); }
+}
+
+@keyframes zeAnimSwing {
+  0%, 100% { transform: rotate(-14deg); }
+  50% { transform: rotate(14deg); }
+}
+
+@keyframes zeWiggleMusic {
+  0%, 100% { transform: rotate(0deg) translateY(0px) scale(1); }
+  25% { transform: rotate(-8deg) translateY(-2px) scale(1.06); }
+  50% { transform: rotate(7deg) translateY(-3px) scale(1.03); }
+  75% { transform: rotate(-5deg) translateY(-1px) scale(1.07); }
+}
+
+@keyframes zeBlinkGlow {
+  0%, 72%, 100% { transform: translateY(0px) scale(1); opacity: 1; }
+  80% { transform: translateY(-2px) scale(1.08); opacity: 0.45; }
+  88% { transform: translateY(-3px) scale(1.1); opacity: 1; }
+  94% { opacity: 0.55; }
+}
+
+@keyframes zeDiamondSpinSparkle {
+  0% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(12deg) translateY(-3px) scale(1.1); }
+  50% { transform: rotate(180deg) translateY(-1px) scale(1.02); }
+  75% { transform: rotate(348deg) translateY(-3px) scale(1.12); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes zeCommunitySwing {
+  0%, 100% { transform: translateX(0px) rotate(0deg); }
+  25% { transform: translateX(-2.5px) rotate(-6deg) translateY(-1.5px); }
+  50% { transform: translateX(0px) rotate(0deg) translateY(-3px); }
+  75% { transform: translateX(2.5px) rotate(6deg) translateY(-1.5px); }
+}
+
+@keyframes zeBubblePop {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  30% { transform: translateY(-3.5px) scale(1.12, 0.94); }
+  55% { transform: translateY(0px) scale(0.96, 1.06); }
+  75% { transform: translateY(-2px) scale(1.05); }
+}
+
+@keyframes zeRobotBlink {
+  0%, 76%, 100% { transform: scaleY(1) translateY(0px); opacity: 1; }
+  82% { transform: scaleY(0.18) translateY(1px); opacity: 0.7; }
+  88% { transform: scaleY(1.06) translateY(-2px); opacity: 1; }
+}
+
+@keyframes zeArrowDrop {
+  0%, 100% { transform: translateY(0px); }
+  45% { transform: translateY(4px) scale(1.05); }
+  70% { transform: translateY(-2px) scale(0.98); }
+}
+
+@keyframes zeTagTilt {
+  0%, 100% { transform: rotate(-4deg) translateY(0px); }
+  50% { transform: rotate(8deg) translateY(-2.5px) scale(1.06); }
+}
+
+@keyframes zeFloatGentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-3px) rotate(3deg); }
+}
+
+@keyframes zeVideoSlowZoom {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.045); }
+}
+
+@keyframes zeBlockEditWiggle {
+  0%, 100% { transform: rotate(-0.7deg) translateY(0px); }
+  50% { transform: rotate(0.7deg) translateY(-1.5px); }
+}
+
+@keyframes zeIconSpinBounce {
+  0% { transform: translateY(0px) rotate(0deg) scale(1); }
+  45% { transform: translateY(-7px) rotate(200deg) scale(1.18); }
+  75% { transform: translateY(2px) rotate(350deg) scale(0.96); }
+  100% { transform: translateY(0px) rotate(360deg) scale(1.06); }
+}
+
+/* Global style overrides for styles 2-14 & 16 when enabled */
+[data-logo-anim-enabled="true"][data-logo-anim-style="wiggle"] .ze-logo-anim {
+  animation: zeAnimWiggle var(--ze-logo-dur) ease-in-out infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="wiggle-heboh"] .ze-logo-anim {
+  animation: zeAnimWiggleHeboh calc(var(--ze-logo-dur) * 0.65) ease-in-out infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="float"] .ze-logo-anim {
+  animation: zeAnimFloat var(--ze-logo-dur) ease-in-out infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="bounce"] .ze-logo-anim {
+  animation: zeAnimBounce calc(var(--ze-logo-dur) * 0.85) ease-in-out infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="spin"] .ze-logo-anim {
+  animation: zeAnimSpin calc(var(--ze-logo-dur) * 1.4) linear infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="spin-fast"] .ze-logo-anim {
+  animation: zeAnimSpin calc(var(--ze-logo-dur) * 0.45) linear infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="blink"] .ze-logo-anim {
+  animation: zeAnimBlink var(--ze-logo-dur) ease-in-out infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="pulse"] .ze-logo-anim {
+  animation: zeAnimPulse var(--ze-logo-dur) ease-in-out infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="slide"] .ze-logo-anim {
+  animation: zeAnimSlide var(--ze-logo-dur) ease-in-out infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="dance"] .ze-logo-anim {
+  animation: zeAnimDance var(--ze-logo-dur) ease-in-out infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="glow"] .ze-logo-anim {
+  animation: zeAnimGlow var(--ze-logo-dur) ease-in-out infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="shake"] .ze-logo-anim {
+  animation: zeAnimShake calc(var(--ze-logo-dur) * 0.55) ease-in-out infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="swing"] .ze-logo-anim {
+  transform-origin: top center;
+  animation: zeAnimSwing var(--ze-logo-dur) ease-in-out infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="tap-only"] .ze-logo-anim {
+  animation: none;
+}
+
+/* Style 15: CAMPUR / ACAK (Random - tiap menu beda animasi!) */
+[data-logo-anim-enabled="true"][data-logo-anim-style="random"] .ze-logo-tiktok {
+  animation: zeWiggleMusic var(--ze-logo-dur) ease-in-out infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="random"] .ze-logo-zeai {
+  animation: zeAnimGlow var(--ze-logo-dur) ease-in-out infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="random"] .ze-logo-diamond {
+  animation: zeDiamondSpinSparkle calc(var(--ze-logo-dur) * 1.25) ease-in-out infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="random"] .ze-logo-community {
+  animation: zeCommunitySwing var(--ze-logo-dur) ease-in-out infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="random"] .ze-logo-groupchat {
+  animation: zeBubblePop var(--ze-logo-dur) ease-in-out infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="random"] .ze-logo-zhdai {
+  animation: zeRobotBlink var(--ze-logo-dur) ease-in-out infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="random"] .ze-logo-webapk {
+  animation: zeArrowDrop var(--ze-logo-dur) ease-in-out infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="random"] .ze-logo-tagno {
+  animation: zeTagTilt var(--ze-logo-dur) ease-in-out infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="random"] .ze-logo-history {
+  animation: zeFloatGentle var(--ze-logo-dur) ease-in-out infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="random"] .ze-logo-story {
+  animation: zeAnimPulse calc(var(--ze-logo-dur) * 1.1) ease-in-out infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="random"] .ze-logo-header {
+  animation: zeAnimGlow calc(var(--ze-logo-dur) * 1.15) ease-in-out infinite;
+}
+[data-logo-anim-enabled="true"][data-logo-anim-style="random"] .ze-logo-nav {
+  animation: zeAnimFloat calc(var(--ze-logo-dur) * 1.2) ease-in-out infinite;
+}
+
+/* Video slow zoom when enabled */
+[data-logo-anim-enabled="true"]:not([data-logo-anim-style="mati"]):not([data-logo-anim-style="tap-only"]) .ze-video-thumb-zoom {
+  animation: zeVideoSlowZoom 9s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+.ze-edit-wiggle {
+  animation: zeBlockEditWiggle 0.42s ease-in-out infinite;
+}
+
+.ze-feature-card {
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
+}
+
+.ze-feature-card:hover {
+  transform: scale(1.045);
+}
+
+.ze-feature-card:active {
+  transform: scale(1.05);
+}
+
+/* Hover / Tap reaction (also powers Style 16: ANIMASI PAS DIPENCET DOANG) */
+[data-logo-anim-enabled="true"]:not([data-logo-anim-style="mati"]) .ze-feature-card:hover .ze-logo-anim,
+[data-logo-anim-enabled="true"]:not([data-logo-anim-style="mati"]) .ze-feature-card:active .ze-logo-anim,
+[data-logo-anim-enabled="true"]:not([data-logo-anim-style="mati"]) button:active .ze-logo-anim {
+  animation: zeIconSpinBounce 0.55s cubic-bezier(0.22, 1, 0.36, 1) 1 forwards !important;
+}
+
+/* Live mini previews inside Setting -> Animasi Logo (16 choices) */
+.ze-logo-preview[data-preview-style="mati"] { animation: none; }
+.ze-logo-preview[data-preview-style="wiggle"] { animation: zeAnimWiggle var(--ze-logo-dur) ease-in-out infinite; }
+.ze-logo-preview[data-preview-style="wiggle-heboh"] { animation: zeAnimWiggleHeboh calc(var(--ze-logo-dur) * 0.65) ease-in-out infinite; }
+.ze-logo-preview[data-preview-style="float"] { animation: zeAnimFloat var(--ze-logo-dur) ease-in-out infinite; }
+.ze-logo-preview[data-preview-style="bounce"] { animation: zeAnimBounce calc(var(--ze-logo-dur) * 0.85) ease-in-out infinite; }
+.ze-logo-preview[data-preview-style="spin"] { animation: zeAnimSpin calc(var(--ze-logo-dur) * 1.4) linear infinite; }
+.ze-logo-preview[data-preview-style="spin-fast"] { animation: zeAnimSpin calc(var(--ze-logo-dur) * 0.45) linear infinite; }
+.ze-logo-preview[data-preview-style="blink"] { animation: zeAnimBlink var(--ze-logo-dur) ease-in-out infinite; }
+.ze-logo-preview[data-preview-style="pulse"] { animation: zeAnimPulse var(--ze-logo-dur) ease-in-out infinite; }
+.ze-logo-preview[data-preview-style="slide"] { animation: zeAnimSlide var(--ze-logo-dur) ease-in-out infinite; }
+.ze-logo-preview[data-preview-style="dance"] { animation: zeAnimDance var(--ze-logo-dur) ease-in-out infinite; }
+.ze-logo-preview[data-preview-style="glow"] { animation: zeAnimGlow var(--ze-logo-dur) ease-in-out infinite; }
+.ze-logo-preview[data-preview-style="shake"] { animation: zeAnimShake calc(var(--ze-logo-dur) * 0.55) ease-in-out infinite; }
+.ze-logo-preview[data-preview-style="swing"] { transform-origin: top center; animation: zeAnimSwing var(--ze-logo-dur) ease-in-out infinite; }
+.ze-logo-preview[data-preview-style="random"] { animation: zeDiamondSpinSparkle calc(var(--ze-logo-dur) * 1.1) ease-in-out infinite; }
+.ze-logo-preview[data-preview-style="tap-only"] { animation: none; }
+.group:hover .ze-logo-preview[data-preview-style="tap-only"],
+.group:active .ze-logo-preview[data-preview-style="tap-only"] {
+  animation: zeIconSpinBounce 0.55s cubic-bezier(0.22, 1, 0.36, 1) 1 forwards;
+}

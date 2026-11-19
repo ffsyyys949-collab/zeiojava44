@@ -1,0 +1,8 @@
+{
+  "name": "ZE.IO x CECEL",
+  "description": "ZE.io - Next-Gen Social, Music, Community \u0026 Instant Messaging Platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
